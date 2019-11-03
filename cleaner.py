@@ -1,6 +1,6 @@
 import json
 
-with open('./public/data/Penguins/2018.json') as data_file:
+with open('./public/data/Penguins/2010.json') as data_file:
     data = json.load(data_file)
 
 itemsToRemove = []
