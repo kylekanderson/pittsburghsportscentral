@@ -1,0 +1,29 @@
+Assignment Details
+Add specific color scheme styling to the existing HTML layout of your final project website, utilizing a separate LESS stylesheet. 
+
+Include color variables, nested styling, and mixins into your LESS stylesheet that the various HTML elements in your page will use. 
+
+After completing this assignment, come back to this page and answer the following questions:
+
+How many hours do you estimate you spent completing the assignment?
+What was easiest?
+What was most difficult? 
+Please submit responses to your questions and either upload your files to Canvas or submit a GitHub link.
+
+https://classroom.github.com/a/7hb8iTLJ
+
+Rubric
+Week 6 Assignment - LESS Stylesheet
+Week 6 Assignment - LESS Stylesheet
+Criteria	Ratings	Pts
+This criterion is linked to a Learning OutcomeSpecific LESS styling for various HTML elements such as buttons and color theme for the interface.
+60.0 pts
+This criterion is linked to a Learning OutcomeUse of at least three color variables
+10.0 pts
+This criterion is linked to a Learning OutcomeUse of nested styling
+10.0 pts
+This criterion is linked to a Learning OutcomeUse of a mixin
+10.0 pts
+This criterion is linked to a Learning OutcomeProject must run error free and render valid CSS code
+10.0 pts
+Total Points: 100.0
