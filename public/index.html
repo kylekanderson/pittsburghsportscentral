@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./images/favicon/site.webmanifest">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <!-- popper.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/9dcbbfe469.js" crossorigin="anonymous"></script>
+  <!-- Project-Specific Style Sheet -->
+  <link rel="stylesheet" href="./stylesheets/style.css"/>
+  <style>
+    /* Slide Show */
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+      position: relative;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+      cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0.73em;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Container for image text */
+    .caption-container {
+      text-align: center;
+      background-color: #222;
+      padding: 2px 16px;
+      color: white;
+    }
+
+    .thumbRow:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Six columns side by side */
+    .thumbColumn {
+      float: left;
+      width: 16.66%;
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    .thumbnailImage {
+      opacity: 0.6;
+    }
+
+    .active,
+    .thumbnailImage:hover {
+      opacity: 1;
+    }
+  </style>
+
+  <!-- Page Title -->
+  <title>Pittsburgh Sports Central</title>
+</head>
+
+<body>
+  <!-- NavBar -->
+  <nav class="navbar navbar-fixed-top navbar-expand-sm navbar-dark fixed-top" style="background-color: #333;">
+    <!-- NavBar Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- NavBar Items -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Penguins
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="html/pens_history.html">History</a>
+            <a class="dropdown-item" href="html/pens_schedule.html">Schedule</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Pirates
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="html/pirates_history.html">History</a>
+            <a class="dropdown-item" href="html/pirates_schedule.html">Schedule</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Steelers
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="html/steelers_history.html">History</a>
+            <a class="dropdown-item" href="html/steelers_schedule.html">Schedule</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main role="main" class="container">
+    <!-- Logo -->
+    <div class="row">
+      <div class="col">
+        <a href="index.html">
+          <img src="./images/Logo.png" class="img-fluid" alt="Logo" id="mainLogo" aria-label="Page Logo" />
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Slideshow -->
+      <div class="col-md-8">
+        <!-- Full-width images -->
+        <div class="mySlides" style="display: none;">
+          <img src="./images/Steelers/Heinz_Field.jpg" style="width:100%" alt="Heinz Field"
+            aria-label="Heinz Field">
+        </div>
+
+        <div class="mySlides" style="display: none;">
+          <img src="./images/Penguins/PPG_Paints_Arena.jpg" style="width:100%" alt="PPG Paints Arena"
+            aria-label="PPG Paints Arena">
+        </div>
+
+        <div class="mySlides" style="display: block;">
+          <img src="./images/Pirates/PNC_Park.jpg" style="width:100%" alt="PNC Park" aria-label="PNC Park">
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <!-- Image text -->
+        <div class="caption-container">
+          <p id="caption">PNC Park</p>
+        </div>
+
+        <!-- Thumbnail images -->
+        <div class="thumbRow">
+          <div class="thumbColumn">
+            <img class="thumbnailImage cursor" src="./images/Steelers/Heinz_Field.jpg" style="width:100%"
+              onclick="currentSlide(1)" alt="Heinz Field" aria-label="Heinz Field thumbnail image">
+          </div>
+          <div class="thumbColumn">
+            <img class="thumbnailImage cursor" src="./images/Penguins/PPG_Paints_Arena.jpg" style="width:100%"
+              onclick="currentSlide(2)" alt="PPG Paints Arena" aria-label="PPG Paints Arena thumbnail image">
+          </div>
+          <div class="thumbColumn">
+            <img class="thumbnailImage cursor active" src="./images/Pirates/PNC_Park.jpg" style="width:100%"
+              onclick="currentSlide(3)" alt="PNC Park" aria-label="PNC Park thumbnail image">
+          </div>
+        </div>
+      </div>
+      <!-- Headlines -->
+      <!-- TODO: Headline aggregation (from an RSS feed maybe?) -->
+      <div class="col-md-4">
+        <h1>Headlines</h1>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <a href="#">Article 1</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#">Article 2</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#">Article 3</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#">Article 4</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#">Article 5</a>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#">Article 6</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br>
+    <!-- About Section -->
+    <!-- TODO: Content for this section -->
+    <div class="row">
+      <div class="col">
+        <h1>About</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, aspernatur nihil culpa
+          praesentium neque impedit harum perferendis veritatis? Repellendus aspernatur nemo sit ipsum
+          rerum
+          et, minus commodi voluptate eos ullam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit voluptas nam numquam.
+          Tempore iusto iste quia dolorum expedita, quidem aspernatur rerum vitae assumenda sapiente,
+          ducimus
+          asperiores atque quam culpa soluta.
+        </p>
+      </div>
+    </div>
+    <br>
+    <!-- Contact Form -->
+    <!-- TODO: Wire up submit button -->
+    <div class="row">
+      <div class="col">
+        <h1>Contact</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <form>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+              anyone.</small>
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea class="form-control rounded-3" id="message" rows="10" cols="80"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+  <!-- Footer -->
+  <footer class="page-footer font-small darken-3">
+
+    <!-- Social Media -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 py-5">
+          <div class="text-center">
+            <!-- Facebook -->
+            <a class="fb-ic" href="https://www.facebook.com">
+              <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!-- Twitter -->
+            <a class="tw-ic" href="https://www.twitter.com">
+              <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+            <!--Linkedin -->
+            <a class="li-ic" href="https://www.linkedin.com">
+              <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+      <a href="mailto:kylekanderson@gmail.com"> Kyle Anderson</a>
+    </div>
+  </footer>
+  <!-- Javascript for the slideshow -->
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides((slideIndex += n));
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides((slideIndex = n));
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("thumbnailImage");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+  </script>
+</body>
+
+</html>
