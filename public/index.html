@@ -29,82 +29,6 @@
   <script src="https://kit.fontawesome.com/9dcbbfe469.js" crossorigin="anonymous"></script>
   <!-- Project-Specific Style Sheet -->
   <link rel="stylesheet" href="./stylesheets/style.css"/>
-  <style>
-    /* Slide Show */
-    /* Position the image container (needed to position the left and right arrows) */
-    .container {
-      position: relative;
-    }
-
-    /* Hide the images by default */
-    .mySlides {
-      display: none;
-    }
-
-    /* Add a pointer when hovering over the thumbnail images */
-    .cursor {
-      cursor: pointer;
-    }
-
-    /* Next & previous buttons */
-    .prev,
-    .next {
-      cursor: pointer;
-      position: absolute;
-      top: 40%;
-      width: auto;
-      padding: 16px;
-      margin-top: -50px;
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      -webkit-user-select: none;
-    }
-
-    /* Position the "next button" to the right */
-    .next {
-      right: 0.73em;
-      border-radius: 3px 0 0 3px;
-    }
-
-    /* On hover, add a black background color with a little bit see-through */
-    .prev:hover,
-    .next:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    /* Container for image text */
-    .caption-container {
-      text-align: center;
-      background-color: #222;
-      padding: 2px 16px;
-      color: white;
-    }
-
-    .thumbRow:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-
-    /* Six columns side by side */
-    .thumbColumn {
-      float: left;
-      width: 16.66%;
-    }
-
-    /* Add a transparency effect for thumnbail images */
-    .thumbnailImage {
-      opacity: 0.6;
-    }
-
-    .active,
-    .thumbnailImage:hover {
-      opacity: 1;
-    }
-  </style>
 
   <!-- Page Title -->
   <title>Pittsburgh Sports Central</title>
@@ -112,7 +36,7 @@
 
 <body>
   <!-- NavBar -->
-  <nav class="navbar navbar-fixed-top navbar-expand-sm navbar-dark fixed-top" style="background-color: #333;">
+  <nav class="navbar navbar-fixed-top navbar-expand-sm navbar-dark fixed-top">
     <!-- NavBar Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -286,20 +210,21 @@
       <div class="col">
         <form>
           <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter name">
+            <label for="name">Name</label> 
+            <input id="name" name="name" placeholder="Enter Name" type="text" required="required" class="form-control">
           </div>
           <div class="form-group">
-            <label for="email">Email address:</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-              anyone.</small>
+            <label for="email">Email</label> 
+            <input id="email" name="email" placeholder="Enter Email" type="text" aria-describedby="emailHelpBlock" required="required" class="form-control"> 
+            <span id="emailHelpBlock" class="form-text text-muted">We'll never share your email with anyone.</span>
           </div>
           <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea class="form-control rounded-3" id="message" rows="10" cols="80"></textarea>
+            <label for="message">Message</label> 
+            <textarea id="message" name="message" cols="40" rows="10" required="required" class="form-control"></textarea>
+          </div> 
+          <div class="form-group">
+            <button name="submit" type="submit" class="btn btn-primary">Submit</button>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>
