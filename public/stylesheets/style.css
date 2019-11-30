@@ -1,60 +1,51 @@
-/* Full Page */
+/* 
+Refer to the following locations in this stylesheet for the requirements from this week's assignment:
+Use of at least three color variables: Immediately below
+Use of nested styling: Hyperlinks styling
+Use of a mixin: .prev, .next styling
+*/
 * {
   box-sizing: border-box;
 }
 *:focus {
-  border-color: #FFB612 !important;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FFB612 !important;
+  border-color: #ffb612 !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #ffb612 !important;
 }
-/* Body */
 body {
   padding-top: 70px;
 }
-/* Hyperlinks */
+.container {
+  position: relative;
+}
 a {
   color: #333;
 }
 a:hover {
-  color: #A5ACAF;
+  color: #a5acaf;
   text-decoration: none;
 }
-a:focus {
-  border-color: #FFB612 !important;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FFB612 !important;
-}
-/* Buttons */
 button {
   background-color: #333 !important;
   border-color: #333 !important;
 }
 button:hover {
-  background-color: #A5ACAF !important;
-  border-color: #A5ACAF !important;
+  background-color: #a5acaf !important;
+  border-color: #a5acaf !important;
 }
-div.dropdown.show > ul > li > a {
-  color: #333 !important;
-}
-/* NavBar */
 .navbar {
   background-color: #333;
 }
-#navbarSupportedContent > ul > li.nav-item.dropdown.show > div > a:active {
-  background-color: #A5ACAF;
+.navbar .dropdown-item:focus {
+  background-color: gray;
 }
-.container {
-  position: relative;
-}
-/* Hide the images by default */
-.mySlides {
+.slideShow .mySlides {
   display: none;
 }
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
+.slideShow .cursor {
   cursor: pointer;
 }
-/* Next & previous buttons */
-.prev,
-.next {
+.slideShow .prev,
+.slideShow .next {
   cursor: pointer;
   position: absolute;
   top: 40%;
@@ -68,38 +59,33 @@ div.dropdown.show > ul > li > a {
   user-select: none;
   -webkit-user-select: none;
 }
-/* Position the "next button" to the right */
-.next {
+.slideShow .prev:hover,
+.slideShow .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.slideShow .next {
   right: 0.73em;
   border-radius: 3px 0 0 3px;
 }
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-/* Container for image text */
-.caption-container {
+.slideShow .caption-container {
   text-align: center;
   background-color: #222;
   padding: 2px 16px;
   color: white;
 }
-.thumbRow:after {
+.slideShow .thumbRow:after {
   content: "";
   display: table;
   clear: both;
 }
-/* Six columns side by side */
-.thumbColumn {
+.slideShow .thumbColumn {
   float: left;
   width: 16.66%;
 }
-/* Add a transparency effect for thumnbail images */
-.thumbnailImage {
+.slideShow .thumbnailImage {
   opacity: 0.6;
 }
-.active,
-.thumbnailImage:hover {
+.slideShow .active,
+.slideShow .thumbnailImage:hover {
   opacity: 1;
 }
