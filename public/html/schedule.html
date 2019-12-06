@@ -26,6 +26,14 @@
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <!-- Global Javascript File -->
     <script src="../javascripts/app.js"></script>
+    <script>
+        window.onload = function() {
+            var team = getUrlParameter('team');
+            var year = getUrlParameter('year');
+            document.getElementById('cmbYear').innerHTML = year;
+            populateSchedule(team, year);
+        }
+    </script>
 
     <!-- Page Title -->
     <title>Pittsburgh Sports Central</title>
@@ -79,7 +87,7 @@
         <!-- Logo -->
         <div class="row">
             <div class="col">
-                <a href="../index.html">
+                <a href="./index.html">
                     <img src="../images/Logo.png" class="img-fluid" alt="Logo" id="mainLogo" aria-label="Page Logo" />
                 </a>
             </div>
@@ -89,41 +97,50 @@
             <div class="col">
                 <h1 id="header"></h1>
                 <script id="headerTemplate" type="x-tmpl-mustache">
-                    {{team}} History
+                    {{team}} Schedule
                 </script>
             </div>
         </div>
-        <div class="row">
-            <!-- Decade Picker -->
-            <div class="col-3">
-                <div class="btn-group-vertical">
-                    <button type="button" class="btn btn-primary" onclick='buildHistoryURL(getUrlParameter("team"), "1980s")'>
-                        1980s
-                    </button>
-                    <button type="button" class="btn btn-primary" onclick='buildHistoryURL(getUrlParameter("team"), "1990s")'>
-                        1990s
-                    </button>
-                    <button type="button" class="btn btn-primary" onclick='buildHistoryURL(getUrlParameter("team"), "2000s")'>
-                        2000s
-                    </button>
-                </div>
-            </div>
-            <!-- History Text -->
-            <!-- TODO: Add content -->
-            <div class="col-6">
-                <p id="history_content"></p>
-                <script id="historyTemplate" type="x-tmpl-mustache">
-                    {{history_content}}
-                </script>
-            </div>
-            <!-- Team-Specific Picture -->
-            <div class="col-3">
-                <img id="img_content" src="" alt="" class="img-fluid">
-                <script id="imageTemplate" type="text/x-handlebars-template">
-                    {{{img_content}}}
-                </script>
-            </div>
+        <!-- Year Picker -->
+        <div class="dropdown">
+            <button id="cmbYear" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a onclick='buildScheduleURL(getUrlParameter("team"), "2018")'>2018</a></li>
+                <li><a onclick='buildScheduleURL(getUrlParameter("team"), "2017")'>2017</a></li>
+                <li><a onclick='buildScheduleURL(getUrlParameter("team"), "2016")'>2016</a></li>
+                <li><a onclick='buildScheduleURL(getUrlParameter("team"), "2015")'>2015</a></li>
+                <li><a onclick='buildScheduleURL(getUrlParameter("team"), "2014")'>2014</a></li>
+                <li><a onclick='buildScheduleURL(getUrlParameter("team"), "2013")'>2013</a></li>
+                <li><a onclick='buildScheduleURL(getUrlParameter("team"), "2012")'>2012</a></li>
+                <li><a onclick='buildScheduleURL(getUrlParameter("team"), "2011")'>2011</a></li>
+                <li><a onclick='buildScheduleURL(getUrlParameter("team"), "2010")'>2010</a></li>
+            </ul>
         </div>
+        <br />
+        <!-- Schedule Table -->
+        <!-- TODO: Build table from json in /public/data -->
+        <table id="scheduleTable" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Opponent</th>
+                    <th>Result</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <script id="scheduleTemplate" type="text/template">
+                    <tr>
+                        <td>{{Date}}</td>
+                        <td>{{FIELD3}}{{Opponent}}</td>
+                        <td>{{FIELD7}}</td>
+                        <td>{{GF}}-{{GA}}</td>
+                    </tr>
+                </script>
+            </tbody>
+        </table>
     </main>
     <!-- Footer -->
     <footer class="page-footer font-small darken-3">
@@ -162,13 +179,6 @@
             <a href="mailto:kylekanderson@gmail.com"> Kyle Anderson</a>
         </div>
     </footer>
-    <script>
-        window.onload = function() {
-            var team = getUrlParameter('team');
-            var decade = getUrlParameter('decade');
-            populateHistory(team, decade);
-        };
-    </script>
 </body>
 
 </html>

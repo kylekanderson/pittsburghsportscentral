@@ -1,3 +1,69 @@
+/* 
+Global Functions
+*/
+function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType('application/json');
+    rawFile.open('GET', file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == '200') {
+            callback(rawFile.responseText);
+        }
+    };
+    rawFile.send(null);
+}
+
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ?
+        '' :
+        decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+/* 
+Schedule Functions
+*/
+function buildScheduleURL(team, year) {
+    window.location.href = `./schedule.html?team=${team}&year=${year}`;
+}
+
+function populateSchedule(team, year) {
+    var headerTemplate = document.getElementById('headerTemplate').innerHTML;
+    var scheduleTemplate = document.getElementById('scheduleTemplate').innerHTML;
+
+    Mustache.parse(headerTemplate);
+    Mustache.parse(scheduleTemplate);
+
+    capTeam = team.charAt(0).toUpperCase() + team.substring(1);
+
+    dataFile = `../data/${capTeam}/${year}.json`;
+
+    console.log(dataFile);
+
+    readTextFile(dataFile, function(text) {
+        var data = JSON.parse(text);
+
+        var headerRendered = Mustache.render(headerTemplate, {
+            team: capTeam
+        });
+        //Overwrite the contents of #target with the rendered HTML
+        document.getElementById('header').innerHTML = headerRendered;
+
+
+        for (var i in data) {
+            var scheduleRendered = Mustache.render(scheduleTemplate, data[i]);
+            $('#scheduleTable').append(scheduleRendered);
+        }
+
+    });
+}
+
+
+/* 
+History Functions
+*/
 // uses url encoding to pass parameters to the history page, so that information can be pulled dynamically
 // and inserted for a given team/decade into the page
 function buildHistoryURL(team, decade) {
@@ -33,25 +99,4 @@ function populateHistory(team, decade) {
         document.getElementById('history_content').innerHTML = historyRendered;
         document.getElementById('img_content').setAttribute('src', imgPath);
     });
-}
-
-function readTextFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType('application/json');
-    rawFile.open('GET', file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == '200') {
-            callback(rawFile.responseText);
-        }
-    };
-    rawFile.send(null);
-}
-
-function getUrlParameter(name) {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-    var results = regex.exec(location.search);
-    return results === null ?
-        '' :
-        decodeURIComponent(results[1].replace(/\+/g, ' '));
 }
