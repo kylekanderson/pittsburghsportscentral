@@ -87,7 +87,7 @@
         </div>
         <div class="row">
             <!-- Slideshow -->
-            <div class="col-md-8 slideShow">
+            <div class="col-lg-8 slideShow">
                 <!-- Full-width images -->
                 <div class="mySlides" style="display: none;">
                     <img src="./images/Steelers/Heinz_Field.jpg" style="width:100%" alt="Heinz Field" aria-label="Heinz Field" />
@@ -124,8 +124,7 @@
                 </div>
             </div>
             <!-- Headlines -->
-            <!-- TODO: Headline aggregation (from an RSS feed maybe?) -->
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <h1>Headlines</h1>
 
                 <div id="content"></div>
@@ -151,6 +150,7 @@
 
 
                                     itemLinkElement.setAttribute('href', item.link);
+                                    itemLinkElement.setAttribute('target', "_blank");
                                     itemLinkElement.innerText = item.title;
                                     itemTitleElement.appendChild(itemLinkElement);
 
