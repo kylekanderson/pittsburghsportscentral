@@ -29,6 +29,8 @@
   <script src="https://kit.fontawesome.com/9dcbbfe469.js" crossorigin="anonymous"></script>
   <!-- Project-Specific Style Sheet -->
   <link rel="stylesheet" href="./stylesheets/style.css" />
+  <!-- Global Javascript File -->
+  <script src="./javascripts/app.js"></script>
 
   <!-- Page Title -->
   <title>Pittsburgh Sports Central</title>
@@ -54,7 +56,7 @@
             Penguins
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="html/pens_history.html">History</a>
+            <a class="dropdown-item" onclick='buildHistoryURL("penguins", "1980s")'>History</a>
             <a class="dropdown-item" href="html/pens_schedule.html">Schedule</a>
           </div>
         </li>
@@ -64,7 +66,7 @@
             Pirates
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="html/pirates_history.html">History</a>
+            <a class="dropdown-item" onclick='buildHistoryURL("pirates", "1980s")'>History</a>
             <a class="dropdown-item" href="html/pirates_schedule.html">Schedule</a>
           </div>
         </li>
@@ -74,7 +76,7 @@
             Steelers
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="html/steelers_history.html">History</a>
+            <a class="dropdown-item" onclick='buildHistoryURL("steelers", "1980s")'>History</a>
             <a class="dropdown-item" href="html/steelers_schedule.html">Schedule</a>
           </div>
         </li>

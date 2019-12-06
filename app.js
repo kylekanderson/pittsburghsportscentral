@@ -11,6 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(lessMiddleware(path.join(__dirname, 'public/stylesheets')));
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public/html'));
+app.use(express.static(__dirname + '/public'));
 
 module.exports = app;

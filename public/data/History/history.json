@@ -1,0 +1,46 @@
+{
+    "team": {
+        "penguins": {
+            "1980s": {
+                "picture": "pens_1980s.jpg",
+                "description": "This is the 1980s history of the Pittsburgh Penguins."
+            },
+            "1990s": {
+                "picture": "pens_1990s.png",
+                "description": "This is the 1990s history of the Pittsburgh Penguins."
+            },
+            "2000s": {
+                "picture": "pens_2000s.png",
+                "description": "This is the 2000s history of the Pittsburgh Penguins."
+            }
+        },
+        "steelers": {
+            "1980s": {
+                "picture": "steelers_1980s.jpg",
+                "description": "This is the 1980s history of the Pittsburgh Steelers."
+            },
+            "1990s": {
+                "picture": "steelers_1990s.png",
+                "description": "This is the 1990s history of the Pittsburgh Steelers."
+            },
+            "2000s": {
+                "picture": "steelers_2000s.png",
+                "description": "This is the 2000s history of the Pittsburgh Steelers."
+            }
+        },
+        "pirates": {
+            "1980s": {
+                "picture": "pirates_1980s.jpg",
+                "description": "This is the 1980s history of the Pittsburgh Pirates."
+            },
+            "1990s": {
+                "picture": "pirates_1990s.png",
+                "description": "This is the 1990s history of the Pittsburgh Pirates."
+            },
+            "2000s": {
+                "picture": "pirates_2000s.png",
+                "description": "This is the 2000s history of the Pittsburgh Pirates."
+            }
+        }
+    }
+}

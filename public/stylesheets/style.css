@@ -23,6 +23,7 @@ a {
 a:hover {
   color: #a5acaf;
   text-decoration: none;
+  cursor: pointer;
 }
 button {
   background-color: #333 !important;
