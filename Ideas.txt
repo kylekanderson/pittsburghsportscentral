@@ -1,3 +1,0 @@
-Templating pages...
-    -Create JSON file that contains data for all teams' history
-    -Define function(s) to load a generic history page and populate it with data based on link clicked. 
