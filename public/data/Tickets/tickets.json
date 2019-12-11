@@ -1,0 +1,25 @@
+{
+    "team": {
+        "steelers": {
+            "Link1": {
+                "Description": "Ticketmaster",
+                "URL": "https://www.ticketmaster.com/pittsburgh-steelers-tickets/artist/806007",
+                "Image": "public/images/Tickets/Ticketmaster_Logo.jpg"
+            },
+            "Link2": {
+                "Description": "Steelers Site",
+                "URL": "https://www.steelers.com/tickets/",
+                "Image": "public/images/Tickets/Steelers_Logo.jpg"
+            },
+            "Link3": {
+                "Description": "StubHub",
+                "URL": "https://www.stubhub.com/pittsburgh-steelers-tickets/",
+                "Image": "public/images/Tickets/StubHub_Logo.png"
+            }
+        },
+        "penguins": {
+        },
+        "pirates": {
+        }
+    }
+}
