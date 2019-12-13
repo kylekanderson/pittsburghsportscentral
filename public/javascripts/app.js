@@ -114,7 +114,6 @@ function populateTickets(team) {
             team: team.charAt(0).toUpperCase() + team.substring(1)
         });
         var ticketsRendered = Mustache.render(ticketsTemplate, {
-            
         })
     })
 }

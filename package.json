@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "lessc public/stylesheets/style.less public/stylesheets/style.css & node ./bin/www"
+    "start": "lessc public/stylesheets/style.less public/stylesheets/style.css & node ./bin/www",
+    "debug": "lessc public/stylesheets/style.less public/stylesheets/style.css & nodemon --inspect ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -11,5 +12,8 @@
     "express": "~4.16.1",
     "less-middleware": "~2.2.1",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
