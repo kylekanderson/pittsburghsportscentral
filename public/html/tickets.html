@@ -1,96 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../images/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../images/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="../images/favicon/favicon-16x16.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png" />
     <link rel="manifest" href="../images/favicon/site.webmanifest" />
     <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <!-- jQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- popper.js -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- Mustache.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"></script>
     <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/9dcbbfe469.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/9dcbbfe469.js" crossorigin="anonymous"></script>
     <!-- Project-Specific Style Sheet -->
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <!-- Global Javascript File -->
     <script src="../javascripts/app.js"></script>
     <script>
-      window.onload = function() {
-        var team = getUrlParameter("team");
-        populateTickets(team);
-      };
+        window.onload = function() {
+            var team = getUrlParameter("team");
+            populateTickets(team);
+        };
     </script>
 
     <!-- Page Title -->
     <title>Pittsburgh Sports Central</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- NavBar -->
     <nav class="navbar navbar-fixed-top navbar-expand-sm navbar-dark fixed-top">
-      <!-- NavBar Button -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+        <!-- NavBar Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- NavBar Items -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html"
-              >Home <span class="sr-only">(current)</span></a
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- NavBar Items -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item dropdown">
@@ -105,11 +63,8 @@
             >
               Penguins
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a
-                class="dropdown-item"
-                onclick='buildHistoryURL("penguins", "1980s")'
-                >History</a
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" onclick='buildHistoryURL("penguins", "1980s")'>History</a
               >
               <a
                 class="dropdown-item"
@@ -130,11 +85,8 @@
             >
               Pirates
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a
-                class="dropdown-item"
-                onclick='buildHistoryURL("pirates", "1980s")'
-                >History</a
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" onclick='buildHistoryURL("pirates", "1980s")'>History</a
               >
               <a
                 class="dropdown-item"
@@ -155,11 +107,8 @@
             >
               Steelers
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a
-                class="dropdown-item"
-                onclick='buildHistoryURL("steelers", "1980s")'
-                >History</a
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" onclick='buildHistoryURL("steelers", "1980s")'>History</a
               >
               <a
                 class="dropdown-item"
@@ -185,71 +134,59 @@
               aria-label="Page Logo"
             />
           </a>
-        </div>
-      </div>
-      <!-- Header -->
-      <div class="row">
-        <div class="col">
-          <h1 id="header"></h1>
-          <script id="headerTemplate" type="x-tmpl-mustache">
-            {{team}} Tickets
-          </script>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <script id="ticketsTemplate" type="x-tmpl-mustache">
-                {{#team}}
-                    <ul>
-                        {{#items}}
-                            <li>{{.}}</li>
-                        {{/items}}
-                    </ul>
-                {{/team}}
-          </script>
-        </div>
-      </div>
-    </main>
-    <!-- Footer -->
-    <footer class="page-footer font-small darken-3">
-      <!-- Footer Elements -->
-      <div class="container">
-        <!-- Grid row-->
-        <div class="row">
-          <!-- Grid column -->
-          <div class="col-md-12 py-5">
-            <div class="text-center">
-              <!-- Facebook -->
-              <a class="fb-ic" href="https://www.facebook.com">
-                <i
-                  class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"
-                >
+                            </div>
+                        </div>
+                        <!-- Header -->
+                        <div class="row">
+                            <div class="col">
+                                <h1 id="header"></h1>
+                                <script id="headerTemplate" type="x-tmpl-mustache">
+                                    {{team}} Tickets
+                                </script>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="ticketsTemplate" class="col">
+                            </div>
+                        </div>
+                        </main>
+                        <!-- Footer -->
+                        <footer class="page-footer font-small darken-3">
+                            <!-- Footer Elements -->
+                            <div class="container">
+                                <!-- Grid row-->
+                                <div class="row">
+                                    <!-- Grid column -->
+                                    <div class="col-md-12 py-5">
+                                        <div class="text-center">
+                                            <!-- Facebook -->
+                                            <a class="fb-ic" href="https://www.facebook.com">
+                                                <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x">
                 </i>
-              </a>
-              <!-- Twitter -->
-              <a class="tw-ic" href="https://www.twitter.com">
-                <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x">
+                                            </a>
+                                            <!-- Twitter -->
+                                            <a class="tw-ic" href="https://www.twitter.com">
+                                                <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x">
                 </i>
-              </a>
-              <!--Linkedin -->
-              <a class="li-ic" href="https://www.linkedin.com">
-                <i
-                  class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"
-                >
+                                            </a>
+                                            <!--Linkedin -->
+                                            <a class="li-ic" href="https://www.linkedin.com">
+                                                <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x">
                 </i>
-              </a>
-            </div>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row-->
-      </div>
-      <!-- Footer Elements -->
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">
-        © 2019 Copyright:
-        <a href="mailto:kylekanderson@gmail.com"> Kyle Anderson</a>
-      </div>
-    </footer>
-  </body>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Grid column -->
+                                </div>
+                                <!-- Grid row-->
+                            </div>
+                            <!-- Footer Elements -->
+                            <!-- Copyright -->
+                            <div class="footer-copyright text-center py-3">
+                                © 2019 Copyright:
+                                <a href="mailto:kylekanderson@gmail.com"> Kyle Anderson</a>
+                            </div>
+                        </footer>
+</body>
+
 </html>
