@@ -42,151 +42,107 @@
     <nav class="navbar navbar-fixed-top navbar-expand-sm navbar-dark fixed-top">
         <!-- NavBar Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- NavBar Items -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Penguins
-            </a>
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Penguins
+                        </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" onclick='buildHistoryURL("penguins", "1980s")'>History</a
-              >
-              <a
-                class="dropdown-item"
-                onclick='buildScheduleURL("penguins", "2018")'
-                >Schedule/Tickets</a
-              >
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Pirates
-            </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" onclick='buildHistoryURL("pirates", "1980s")'>History</a
-              >
-              <a
-                class="dropdown-item"
-                onclick='buildScheduleURL("pirates", "2018")'
-                >Schedule/Tickets</a
-              >
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Steelers
-            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" onclick='buildHistoryURL("steelers", "1980s")'>History</a
-              >
-              <a
-                class="dropdown-item"
-                onclick='buildScheduleURL("steelers", "2018")'
-                >Schedule/Tickets</a
-              >
-            </div>
-          </li>
-        </ul>
-      </div>
+                        <a class="dropdown-item" onclick='buildHistoryURL("penguins", "1980s")'>History</a>
+                        <a class="dropdown-item" onclick='buildScheduleURL("penguins", "2018")'>Schedule/Tickets</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pirates
+                        </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" onclick='buildHistoryURL("pirates", "1980s")'>History</a>
+                        <a class="dropdown-item" onclick='buildScheduleURL("pirates", "2018")'>Schedule/Tickets</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Steelers
+                        </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" onclick='buildHistoryURL("steelers", "1980s")'>History</a>
+                        <a class="dropdown-item" onclick='buildScheduleURL("steelers", "2018")'>Schedule</a>
+                        <a class="dropdown-item" onclick='buildTicketURL("steelers")'>Tickets</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <main role="main" class="container">
-      <!-- Logo -->
-      <div class="row">
-        <div class="col">
-          <a href="./index.html">
-            <img
-              src="../images/Logo.png"
-              class="img-fluid"
-              alt="Logo"
-              id="mainLogo"
-              aria-label="Page Logo"
-            />
-          </a>
-                            </div>
-                        </div>
-                        <!-- Header -->
-                        <div class="row">
-                            <div class="col">
-                                <h1 id="header"></h1>
-                                <script id="headerTemplate" type="x-tmpl-mustache">
-                                    {{team}} Tickets
-                                </script>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div id="ticketsTemplate" class="col">
-                            </div>
-                        </div>
-                        </main>
-                        <!-- Footer -->
-                        <footer class="page-footer font-small darken-3">
-                            <!-- Footer Elements -->
-                            <div class="container">
-                                <!-- Grid row-->
-                                <div class="row">
-                                    <!-- Grid column -->
-                                    <div class="col-md-12 py-5">
-                                        <div class="text-center">
-                                            <!-- Facebook -->
-                                            <a class="fb-ic" href="https://www.facebook.com">
-                                                <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x">
-                </i>
-                                            </a>
-                                            <!-- Twitter -->
-                                            <a class="tw-ic" href="https://www.twitter.com">
-                                                <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x">
-                </i>
-                                            </a>
-                                            <!--Linkedin -->
-                                            <a class="li-ic" href="https://www.linkedin.com">
-                                                <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x">
-                </i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- Grid column -->
-                                </div>
-                                <!-- Grid row-->
-                            </div>
-                            <!-- Footer Elements -->
-                            <!-- Copyright -->
-                            <div class="footer-copyright text-center py-3">
-                                © 2019 Copyright:
-                                <a href="mailto:kylekanderson@gmail.com"> Kyle Anderson</a>
-                            </div>
-                        </footer>
+        <!-- Logo -->
+        <div class="row">
+            <div class="col">
+                <a href="./index.html">
+                    <img src="../images/Logo.png" class="img-fluid" alt="Logo" id="mainLogo" aria-label="Page Logo" />
+                </a>
+            </div>
+        </div>
+        <!-- Header -->
+        <div class="row">
+            <div id="headerTemplate" class="col">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h4>Below are some places to find tickets:</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div id="ticketsTemplate" class="col">
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="page-footer font-small darken-3">
+        <!-- Footer Elements -->
+        <div class="container">
+            <!-- Grid row-->
+            <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-12 py-5">
+                    <div class="text-center">
+                        <!-- Facebook -->
+                        <a class="fb-ic" href="https://www.facebook.com">
+                            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x">
+              </i>
+                        </a>
+                        <!-- Twitter -->
+                        <a class="tw-ic" href="https://www.twitter.com">
+                            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x">
+              </i>
+                        </a>
+                        <!--Linkedin -->
+                        <a class="li-ic" href="https://www.linkedin.com">
+                            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x">
+              </i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row-->
+        </div>
+        <!-- Footer Elements -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            © 2019 Copyright:
+            <a href="mailto:kylekanderson@gmail.com"> Kyle Anderson</a>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -90,3 +90,8 @@ button:hover {
 .slideShow .thumbnailImage:hover {
   opacity: 1;
 }
+.ticketLogo {
+  max-width: 40%;
+  height: auto;
+  padding-bottom: 40px;
+}

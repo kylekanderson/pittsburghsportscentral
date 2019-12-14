@@ -3,17 +3,17 @@
         "steelers": [{
                 "Description": "Ticketmaster",
                 "URL": "https://www.ticketmaster.com/pittsburgh-steelers-tickets/artist/806007",
-                "Image": "/public/images/Tickets/Ticketmaster_Logo.jpg"
+                "Image": "../images/Tickets/ticketmaster.jpg"
             },
             {
                 "Description": "Steelers Site",
                 "URL": "https://www.steelers.com/tickets/",
-                "Image": "/public/images/Tickets/Steelers_Logo.jpg"
+                "Image": "../images/Tickets/steelers.jpg"
             },
             {
                 "Description": "StubHub",
                 "URL": "https://www.stubhub.com/pittsburgh-steelers-tickets/",
-                "Image": "/public/images/Tickets/StubHub_Logo.png"
+                "Image": "../images/Tickets/stubhub.png"
             }
         ],
         "penguins": {},

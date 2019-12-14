@@ -106,10 +106,11 @@ function buildTicketURL(team) {
 }
 
 function populateTickets(team) {
-    var headerTemplate = document.getElementById('headerTemplate').innerHTML;
+    var teamCap = {
+        team: team.charAt(0).toUpperCase() + team.substring(1)
+    };
     var ticketsTemplate = document.getElementById('ticketsTemplate').innerHTML;
 
-    Mustache.parse(headerTemplate);
     Mustache.parse(ticketsTemplate);
 
     readTextFile('../data/Tickets/tickets.json', function(text) {
@@ -119,14 +120,13 @@ function populateTickets(team) {
         console.log(teamData);
         teamData.forEach(link => {
             console.log(link);
-            var template = "<ul><li><a href={{URL}}> <img src={{Image}} alt={{Description}} /> </a></li></ul>";
+            var template = "<p>{{Description}}:</p><a href={{URL}} target='_blank'> <img class='ticketLogo' src={{Image}} alt={{Description}} /> </a></br>";
             var html = Mustache.to_html(template, link);
             console.log(html);
             $('#ticketsTemplate').append(html);
         });
-        var headerRendered = Mustache.render(headerTemplate, {
-            team: team.charAt(0).toUpperCase() + team.substring(1)
-        });
-        document.getElementById('header').innerHTML = headerRendered;
+        var headerTemplate = "<h1>{{team}} Tickets</h1>";
+        var headerRendered = Mustache.to_html(headerTemplate, teamCap);
+        $('#headerTemplate').html(headerRendered);
     })
 }
