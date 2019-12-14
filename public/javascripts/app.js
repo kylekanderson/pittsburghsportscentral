@@ -100,6 +100,10 @@ function populateHistory(team, decade) {
         document.getElementById('img_content').setAttribute('src', imgPath);
     });
 }
+function buildTicketURL(team) {
+    window.location.href = `./tickets.html?team=${team}`;
+    // window.location.href = `./history.html?team=${team}&decade=${decade}`;
+}
 
 function populateTickets(team) {
     var headerTemplate = document.getElementById('headerTemplate').innerHTML;
@@ -110,10 +114,14 @@ function populateTickets(team) {
 
     readTextFile('../data/Tickets/tickets.json', function(text) {
         var data = JSON.parse(text);
+        data.forEach(element => {
+            console.log(element);
+        });
         var headerRendered = Mustache.render(headerTemplate, {
             team: team.charAt(0).toUpperCase() + team.substring(1)
         });
         var ticketsRendered = Mustache.render(ticketsTemplate, {
-        })
+        });
+        document.getElementById('header').innerHTML = headerRendered;
     })
 }
