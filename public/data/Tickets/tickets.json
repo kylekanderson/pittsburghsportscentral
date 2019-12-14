@@ -16,7 +16,37 @@
                 "Image": "../images/Tickets/stubhub.png"
             }
         ],
-        "penguins": {},
-        "pirates": {}
+        "penguins": [{
+                "Description": "Ticketmaster",
+                "URL": "https://www.ticketmaster.com/pittsburgh-penguins-tickets/artist/806005",
+                "Image": "../images/Tickets/ticketmaster.jpg"
+            },
+            {
+                "Description": "Penguins Site",
+                "URL": "https://www.nhl.com/penguins/tickets",
+                "Image": "../images/Tickets/penguins.png"
+            },
+            {
+                "Description": "StubHub",
+                "URL": "https://www.stubhub.com/pittsburgh-penguins-tickets/performer/4822/",
+                "Image": "../images/Tickets/stubhub.png"
+            }
+        ],
+        "pirates": [{
+                "Description": "Ticketmaster",
+                "URL": "https://www.ticketmaster.com/pittsburgh-pirates-tickets/artist/806006",
+                "Image": "../images/Tickets/ticketmaster.jpg"
+            },
+            {
+                "Description": "Pirates Site",
+                "URL": "https://www.mlb.com/pirates/tickets",
+                "Image": "../images/Tickets/pirates.png"
+            },
+            {
+                "Description": "StubHub",
+                "URL": "https://www.stubhub.com/pittsburgh-pirates-tickets/performer/4802/",
+                "Image": "../images/Tickets/stubhub.png"
+            }
+        ]
     }
 }

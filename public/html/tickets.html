@@ -42,8 +42,8 @@
     <nav class="navbar navbar-fixed-top navbar-expand-sm navbar-dark fixed-top">
         <!-- NavBar Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- NavBar Items -->
             <ul class="navbar-nav mr-auto">
@@ -52,26 +52,28 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Penguins
-                        </a>
+                        Penguins
+                    </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" onclick='buildHistoryURL("penguins", "1980s")'>History</a>
-                        <a class="dropdown-item" onclick='buildScheduleURL("penguins", "2018")'>Schedule/Tickets</a>
+                        <a class="dropdown-item" onclick='buildScheduleURL("penguins", "2018")'>Schedule</a>
+                        <a class="dropdown-item" onclick='buildTicketURL("penguins")'>Tickets</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pirates
-                        </a>
+                        Pirates
+                    </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" onclick='buildHistoryURL("pirates", "1980s")'>History</a>
-                        <a class="dropdown-item" onclick='buildScheduleURL("pirates", "2018")'>Schedule/Tickets</a>
+                        <a class="dropdown-item" onclick='buildScheduleURL("pirates", "2018")'>Schedule</a>
+                        <a class="dropdown-item" onclick='buildTicketURL("pirates")'>Tickets</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Steelers
-                        </a>
+                        Steelers
+                    </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" onclick='buildHistoryURL("steelers", "1980s")'>History</a>
                         <a class="dropdown-item" onclick='buildScheduleURL("steelers", "2018")'>Schedule</a>
@@ -96,11 +98,11 @@
             <div id="headerTemplate" class="col">
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col">
-                <h4>Below are some places to find tickets:</h4>
+                <h4>Below are some places to find tickets</h4>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div id="ticketsTemplate" class="col">
             </div>

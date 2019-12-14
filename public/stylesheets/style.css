@@ -13,6 +13,7 @@ Use of a mixin: .prev, .next styling
 }
 body {
   padding-top: 70px;
+  background-color: #dddddd;
 }
 .container {
   position: relative;

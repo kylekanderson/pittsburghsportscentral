@@ -40,8 +40,6 @@ function populateSchedule(team, year) {
 
     dataFile = `../data/${capTeam}/${year}.json`;
 
-    console.log(dataFile);
-
     readTextFile(dataFile, function(text) {
         var data = JSON.parse(text);
 
@@ -93,7 +91,6 @@ function populateHistory(team, decade) {
         var historyRendered = Mustache.render(historyTemplate, {
             history_content: data.team[team][decade].description
         });
-        console.log(data.team[team][decade].picture);
         //Overwrite the contents of #target with the rendered HTML
         document.getElementById('header').innerHTML = headerRendered;
         document.getElementById('history_content').innerHTML = historyRendered;
@@ -106,7 +103,7 @@ function buildTicketURL(team) {
 }
 
 function populateTickets(team) {
-    var teamCap = {
+    var capTeam = {
         team: team.charAt(0).toUpperCase() + team.substring(1)
     };
     var ticketsTemplate = document.getElementById('ticketsTemplate').innerHTML;
@@ -116,17 +113,27 @@ function populateTickets(team) {
     readTextFile('../data/Tickets/tickets.json', function(text) {
         var data = JSON.parse(text);
         var teamData = data.team[team];
-        console.log(data);
-        console.log(teamData);
         teamData.forEach(link => {
-            console.log(link);
             var template = "<p>{{Description}}:</p><a href={{URL}} target='_blank'> <img class='ticketLogo' src={{Image}} alt={{Description}} /> </a></br>";
             var html = Mustache.to_html(template, link);
-            console.log(html);
             $('#ticketsTemplate').append(html);
         });
         var headerTemplate = "<h1>{{team}} Tickets</h1>";
-        var headerRendered = Mustache.to_html(headerTemplate, teamCap);
+        var headerRendered = Mustache.to_html(headerTemplate, capTeam);
         $('#headerTemplate').html(headerRendered);
     })
+}
+
+function sendMessage(name, email, message) {
+    var template_params = {
+        "reply_to": email,
+        "from_name": name,
+        "to_name": "Kyle Anderson",
+        "message_html": message
+    }
+
+    var service_id = "default_service";
+    var template_id = "template_4VtWLWY8";
+    emailjs.send(service_id, template_id, template_params);
+    alert('Message Sent Successfully');
 }

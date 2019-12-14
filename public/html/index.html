@@ -23,6 +23,13 @@
     </script>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/9dcbbfe469.js" crossorigin="anonymous"></script>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_QGwrebhV5L94hCNaWUabD");
+        })();
+    </script>
     <!-- Project-Specific Style Sheet -->
     <link rel="stylesheet" href="./stylesheets/style.css" />
     <!-- Global Javascript File -->
@@ -51,7 +58,8 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" onclick='buildHistoryURL("penguins", "1980s")'>History</a>
-                        <a class="dropdown-item" onclick='buildScheduleURL("penguins", "2018")'>Schedule/Tickets</a>
+                        <a class="dropdown-item" onclick='buildScheduleURL("penguins", "2018")'>Schedule</a>
+                        <a class="dropdown-item" onclick='buildTicketURL("penguins")'>Tickets</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -60,7 +68,8 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" onclick='buildHistoryURL("pirates", "1980s")'>History</a>
-                        <a class="dropdown-item" onclick='buildScheduleURL("pirates", "2018")'>Schedule/Tickets</a>
+                        <a class="dropdown-item" onclick='buildScheduleURL("pirates", "2018")'>Schedule</a>
+                        <a class="dropdown-item" onclick='buildTicketURL("pirates")'>Tickets</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -248,7 +257,7 @@
                         <textarea id="message" name="message" cols="40" rows="10" required="required" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
-                        <button name="submit" type="submit" class="btn btn-primary">
+                        <button name="submit" type="button" class="btn btn-primary" onclick="gatherMessage()">
                             Submit
                         </button>
                     </div>
@@ -326,6 +335,18 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
             captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+    <script>
+        function gatherMessage() {
+            var name = document.getElementById('name');
+            var email = document.getElementById('email');
+            var message = document.getElementById('message');
+            sendMessage(name.value, email.value, message.value.replace(/\n\r?/g, '<br />'));
+            name.value = '';
+            email.value = '';
+            message.value = '';
+            return false;
         }
     </script>
 </body>
